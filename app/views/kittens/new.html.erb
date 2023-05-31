@@ -1,2 +1,18 @@
 <h1>Kittens#new</h1>
 <p>Find me in app/views/kittens/new.html.erb</p>
+
+<%= form_with model: @kitten do |form| %>
+    <%= label_tag (:name) %>
+    <%= form.text_field :name %> <br><br>
+
+    <%= label_tag (:age) %>
+    <%= form.number_field :age %> <br><br>
+        
+    <%= label_tag (:cuteness) %>
+    <%= form.number_field :cuteness %> <br><br>
+
+    <%= label_tag (:softness) %>
+    <%= form.number_field :softness %> <br><br>
+
+    <%= submit_tag("Submit") %>
+<% end %>
