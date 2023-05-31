@@ -1,7 +1,12 @@
 <h1>Kittens#show</h1>
 <p>Find me in app/views/kittens/show.html.erb</p>
 
-    <h4>Name: <%= @kitten.name%></h4>
-    <h4>Age: <%= @kitten.age%></h4>
-    <h4>Cuteness: <%= @kitten.cuteness%></h4>
-    <h4>Softness: <%= @kitten.softness%></h4>
+<h4>Name: <%= @kitten.name%></h4>
+<h4>Age: <%= @kitten.age%></h4>
+<h4>Cuteness: <%= @kitten.cuteness%></h4>
+<h4>Softness: <%= @kitten.softness%></h4>
+
+<p><%= link_to 'Edit Kitty', edit_kitten_path %></p>
+<p><%= link_to 'Home', kittens_path %></p>
+
+<%= button_to "Delete", kitten_path(@kitten), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete %>

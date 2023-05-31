@@ -1,0 +1,3 @@
+<%= render  "form" %>
+
+<%= button_to "Delete", kitten_path(cat), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete %>
