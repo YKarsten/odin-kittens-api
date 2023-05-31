@@ -1,0 +1,19 @@
+<%= form_with model: @kitten do |form| %>
+    <%= label_tag (:name) %>
+    <%= form.text_field :name %> <br><br>
+
+    <%= label_tag (:age) %>
+    <%= form.number_field :age %> <br><br>
+        
+    <%= label_tag (:cuteness) %>
+    <%= form.number_field :cuteness %> <br><br>
+
+    <%= label_tag (:softness) %>
+    <%= form.number_field :softness %> <br><br>
+
+    <%= submit_tag("Submit") %>
+<% end %>
+
+<% if @kitten.persisted? %>
+  <%= button_to 'Delete', kitten_path(@kitten),class: 'btn btn-primary mt-3', form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete %>
+<% end %>

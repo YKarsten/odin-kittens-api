@@ -1,11 +1,17 @@
 <h1>Kittens#index</h1>
 <p>Find me in app/views/kittens/index.html.erb</p>
 
+<p> <%=link_to 'Create Kitty', new_kitten_path  %></p>
+
 <% @kittens.each do |cat| %>
     <h4>Name: <%= cat.name%></h4>
     <h4>Age: <%= cat.age%></h4>
     <h4>Cuteness: <%= cat.cuteness%></h4>
     <h4>Softness: <%= cat.softness%></h4>
+
+    <%= link_to "Show", kitten_path(cat) %> <br><br>
+    <%= button_to "Delete", kitten_path(cat), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete %>
+
 <% end %>
 
 
