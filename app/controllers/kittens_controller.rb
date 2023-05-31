@@ -16,7 +16,7 @@ class KittensController < ApplicationController
 
   def create
     @kitten = Kitten.new(kitten_params)
-    if kitten.save
+    if @kitten.save
       redirect_to kitten_url(@kitten), notice: 'Kitten was successfully created.'
     else
       render :new, status: :unprocessable_entity
